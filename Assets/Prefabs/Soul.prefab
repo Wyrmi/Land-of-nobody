@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 907594461428334254}
   - component: {fileID: 2710360501355623995}
   - component: {fileID: 6897389050336992987}
+  - component: {fileID: 4326897550070039396}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Untagged
@@ -134,3 +135,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.11, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &4326897550070039396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5330482426396081465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f5c0071e4ae1641a4c4a55ce7628bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 2710360501355623995}
+  one: {fileID: 21300000, guid: c175c0846905f2141830e65d8e2d721a, type: 3}
+  two: {fileID: 21300000, guid: dd3d0cd0063c36447a2e15d72377d0ca, type: 3}
+  animationSpeed: 1
