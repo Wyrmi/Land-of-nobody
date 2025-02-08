@@ -21,6 +21,11 @@ public class PlayerMove : MonoBehaviour
         dirX = Input.GetAxis("Horizontal") * speed;
         dirY = Input.GetAxis("Vertical") * speed;
         rb.linearVelocity = new Vector2(dirX,dirY);
+        
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
     void OnBecameInvisible()
     {
