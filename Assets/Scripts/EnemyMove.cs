@@ -15,6 +15,5 @@ public class EnemyMove : MonoBehaviour
         if (collision.GetComponent<PlayerMove>() != null) {
             SceneManager.LoadScene(0);
         }
-        
     }
 }
