@@ -4,12 +4,14 @@ public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed;
+    public int score;
     float dirX, dirY;
     Vector3 pos;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         pos = Camera.main.WorldToViewportPoint(transform.position);
+        score = 0;
     }
 
     void Update()
@@ -38,5 +40,11 @@ public class PlayerMove : MonoBehaviour
             pos = new Vector3(pos.x, 0.0f, pos.z);
         }
         transform.position = Camera.main.ViewportToWorldPoint(pos);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(collision.gameObject);
+        score ++;
     }
 }
