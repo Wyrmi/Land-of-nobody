@@ -8,12 +8,19 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(gameObject.transform.position, player.transform.position, speed * Time.deltaTime);
+        if (player != null)
+        {
+            transform.position = Vector2.MoveTowards(gameObject.transform.position, player.transform.position, speed * Time.deltaTime);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerMove>() != null) {
             SceneManager.LoadScene(0);
         }
+    }
+    private void OnBecameVisible()
+    {
+        player = FindFirstObjectByType<PlayerMove>().gameObject;
     }
 }
