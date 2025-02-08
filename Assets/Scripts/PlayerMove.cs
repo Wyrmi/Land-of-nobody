@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -5,6 +6,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     public float speed;
     public int score;
+    public TextMeshProUGUI scoreText;
     float dirX, dirY;
     Vector3 pos;
     void Start()
@@ -46,5 +48,6 @@ public class PlayerMove : MonoBehaviour
     {
         Destroy(collision.gameObject);
         score ++;
+        scoreText.text = "Souls:\n" + score;
     }
 }
