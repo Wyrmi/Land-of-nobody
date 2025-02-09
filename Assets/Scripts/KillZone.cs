@@ -8,6 +8,7 @@ public class KillZone : MonoBehaviour
         if (collision.GetComponent<PlayerMove>() != null)
         {
             collision.GetComponent<PlayerMove>().GetHit();
+            Destroy(gameObject);
         }
     }
 }

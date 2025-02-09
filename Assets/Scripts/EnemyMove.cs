@@ -32,6 +32,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (collision.GetComponent<PlayerMove>() != null) {
             collision.GetComponent<PlayerMove>().GetHit();
+            Destroy(gameObject);
         }
     }
     private void OnBecameVisible()

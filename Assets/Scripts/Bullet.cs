@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour
         if (collision.GetComponent<PlayerMove>() != null)
         {
             collision.GetComponent<PlayerMove>().GetHit();
+            Destroy(gameObject);
         }
     }
 }

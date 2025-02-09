@@ -9,8 +9,12 @@ public class PlayerMove : MonoBehaviour
     public float speed;
     public int score;
     public TextMeshProUGUI scoreText;
+    public GameObject soul;
+    public float soulDropDistance;
     float dirX, dirY;
     Vector3 pos;
+    Vector2 ringdir;
+    Vector3 ringpos;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,7 +75,13 @@ public class PlayerMove : MonoBehaviour
     {
         if (score > 0)
         {
-            Debug.Log("sonic");
+            for (int i = 0; i < score; i++)
+            {
+                Debug.Log(i);
+                ringdir = Random.insideUnitCircle;
+                pos = ringdir * soulDropDistance;
+                Instantiate(soul, new Vector3(transform.position.x + pos.x, transform.position.y + pos.y, 0), transform.rotation);
+            }
             score = 0;
             scoreText.text = "Souls:\n" + score;
         }
