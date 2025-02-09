@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7199243891423768523, guid: 5e8ed66a362750740bb1b6f52e8c8252, type: 3}
+  shootDelay: 2
 --- !u!82 &6761835760151919297
 AudioSource:
   m_ObjectHideFlags: 0
