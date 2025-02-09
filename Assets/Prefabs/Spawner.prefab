@@ -46,10 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDistance: 15
   objectsToSpawn:
-  - {fileID: 5892563372245476216, guid: 490d490cbb46ee84ca336e6454510ac5, type: 3}
-  - {fileID: 107637916463625000, guid: a75d43669a1a9d143bb26d2da3572850, type: 3}
-  - {fileID: 5330482426396081465, guid: 35d10fab5cbb2ed4d9ed5c8998f332ed, type: 3}
-  - {fileID: 5330482426396081465, guid: 35d10fab5cbb2ed4d9ed5c8998f332ed, type: 3}
-  - {fileID: 5330482426396081465, guid: 35d10fab5cbb2ed4d9ed5c8998f332ed, type: 3}
-  - {fileID: 5892563372245476216, guid: 490d490cbb46ee84ca336e6454510ac5, type: 3}
-  - {fileID: 107637916463625000, guid: a75d43669a1a9d143bb26d2da3572850, type: 3}
+  - {fileID: 3851884301644883087, guid: 35d10fab5cbb2ed4d9ed5c8998f332ed, type: 3}
+  - {fileID: 225706287627932015, guid: f0b63b0808d41104f873f863306c2868, type: 3}
+  - {fileID: 7284278383326234963, guid: 14345001d4e25004cbe6693f31dba0e6, type: 3}
+  - {fileID: 2661592518592915629, guid: a75d43669a1a9d143bb26d2da3572850, type: 3}
+  - {fileID: 99110400503257113, guid: 7ff3f45b34b1d2d428888e6cf21fb304, type: 3}
+  - {fileID: 3851884301644883087, guid: 35d10fab5cbb2ed4d9ed5c8998f332ed, type: 3}
+  - {fileID: 3851884301644883087, guid: 35d10fab5cbb2ed4d9ed5c8998f332ed, type: 3}
