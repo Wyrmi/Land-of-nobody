@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6360095834834666853}
   - component: {fileID: 5949940204455009549}
   - component: {fileID: 4978637551742706067}
+  - component: {fileID: 8679588077919400464}
+  - component: {fileID: 8336261668714231849}
   m_Layer: 0
   m_Name: KillZone
   m_TagString: Untagged
@@ -145,5 +147,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47006e6965dd5534caf266e8dfbb97e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8679588077919400464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107637916463625000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb8a63f1ff7ed942866332d1f05e88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8336261668714231849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107637916463625000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb8a63f1ff7ed942866332d1f05e88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

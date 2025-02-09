@@ -11,9 +11,4 @@ public class KillZone : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
 }
