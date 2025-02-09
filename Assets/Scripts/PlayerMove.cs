@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D rb;
     SpriteRenderer sr;
+    AudioSource DeathSFX;
     public float speed;
     public int score;
     public TextMeshProUGUI scoreText;
@@ -19,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        DeathSFX = GameObject.FindGameObjectWithTag("DeathSFX").GetComponent<AudioSource>();
         pos = Camera.main.WorldToViewportPoint(transform.position);
         score = 0;
     }
@@ -73,6 +75,7 @@ public class PlayerMove : MonoBehaviour
 
     public void GetHit()
     {
+        DeathSFX.Play();
         if (score > 0)
         {
             for (int i = 0; i < score; i++)
