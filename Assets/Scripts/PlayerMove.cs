@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject soul;
     public float soulDropDistance;
+    public float animationSpeed;
+    public Sprite[] horseAnim;
     float dirX, dirY;
     Vector3 pos;
     Vector2 ringdir;
@@ -26,6 +29,7 @@ public class PlayerMove : MonoBehaviour
         deathSFX = GameObject.FindGameObjectWithTag("DeathSFX").GetComponent<AudioSource>();
         pos = Camera.main.WorldToViewportPoint(transform.position);
         score = 0;
+        StartCoroutine(animate());
     }
 
     void Update()
@@ -53,6 +57,22 @@ public class PlayerMove : MonoBehaviour
         else if (!horse.isPlaying && rb.linearVelocity != Vector2.zero)
         {
             horse.Play();
+        }
+    }
+
+    IEnumerator animate()
+    {
+        int i = 0;
+        while (true)
+        {
+            yield return new WaitForSeconds(animationSpeed);
+            if (rb.linearVelocity != Vector2.zero)
+            {
+                i++;
+                if (i == horseAnim.Length)
+                    i= 0;
+                sr.sprite = horseAnim[i];
+            }
         }
     }
     void OnBecameInvisible()

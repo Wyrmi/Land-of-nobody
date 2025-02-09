@@ -1689,7 +1689,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.43, y: 0.54}
+    oldSize: {x: 0.55, y: 0.55}
     newSize: {x: 0.43, y: 0.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1716,6 +1716,12 @@ MonoBehaviour:
   scoreText: {fileID: 801445214}
   soul: {fileID: 3851884301644883087, guid: 35d10fab5cbb2ed4d9ed5c8998f332ed, type: 3}
   soulDropDistance: 3
+  animationSpeed: 0.2
+  horseAnim:
+  - {fileID: 21300000, guid: bd8ceaf14ee28424b88f4010141e6f93, type: 3}
+  - {fileID: 21300000, guid: 149462e9dbdec3a4e8045f062c986d26, type: 3}
+  - {fileID: 21300000, guid: dc4f7af3c6a93d24ab296d22600408bd, type: 3}
+  - {fileID: 21300000, guid: cf56320a7b1fbce4c83c4f4d47a529e2, type: 3}
 --- !u!212 &1804515745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1760,7 +1766,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8bac55fac58dc294f92d232555677b42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd8ceaf14ee28424b88f4010141e6f93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
