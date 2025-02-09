@@ -8,7 +8,8 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     AudioSource deathSFX;
-    AudioSource horse;
+    public AudioSource horse;
+    public AudioSource soulCollect;
     public float speed;
     public int score;
     public TextMeshProUGUI scoreText;
@@ -22,7 +23,6 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        horse = GetComponent<AudioSource>();
         deathSFX = GameObject.FindGameObjectWithTag("DeathSFX").GetComponent<AudioSource>();
         pos = Camera.main.WorldToViewportPoint(transform.position);
         score = 0;
@@ -79,9 +79,13 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
-        score ++;
-        scoreText.text = "Souls:\n" + score;
+        if (collision.gameObject.GetComponent<Animate>() != null)
+        {
+            Destroy(collision.gameObject);
+            soulCollect.Play();
+            score++;
+            scoreText.text = "Souls:\n" + score;
+        }
     }
 
     public void GetHit()
