@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -64,5 +65,18 @@ public class PlayerMove : MonoBehaviour
         Destroy(collision.gameObject);
         score ++;
         scoreText.text = "Souls:\n" + score;
+    }
+
+    public void GetHit()
+    {
+        if (score > 0)
+        {
+            Debug.Log("sonic");
+            score = 0;
+            scoreText.text = "Souls:\n" + score;
+        }
+        else {
+            SceneManager.LoadScene(0);
+        }
     }
 }

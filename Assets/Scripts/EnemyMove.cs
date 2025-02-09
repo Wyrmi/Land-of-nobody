@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -32,7 +31,7 @@ public class EnemyMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerMove>() != null) {
-            SceneManager.LoadScene(0);
+            collision.GetComponent<PlayerMove>().GetHit();
         }
     }
     private void OnBecameVisible()

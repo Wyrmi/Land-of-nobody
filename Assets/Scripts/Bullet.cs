@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
@@ -25,7 +24,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.GetComponent<PlayerMove>() != null)
         {
-            SceneManager.LoadScene(0);
+            collision.GetComponent<PlayerMove>().GetHit();
         }
     }
 }
