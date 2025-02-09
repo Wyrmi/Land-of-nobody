@@ -1,12 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D rb;
     SpriteRenderer sr;
-    AudioSource DeathSFX;
+    AudioSource deathSFX;
+    AudioSource horse;
     public float speed;
     public int score;
     public TextMeshProUGUI scoreText;
@@ -20,7 +22,8 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        DeathSFX = GameObject.FindGameObjectWithTag("DeathSFX").GetComponent<AudioSource>();
+        horse = GetComponent<AudioSource>();
+        deathSFX = GameObject.FindGameObjectWithTag("DeathSFX").GetComponent<AudioSource>();
         pos = Camera.main.WorldToViewportPoint(transform.position);
         score = 0;
     }
@@ -42,6 +45,14 @@ public class PlayerMove : MonoBehaviour
         else if (rb.linearVelocity.x < 0 && sr.flipX)
         {
             sr.flipX = false;
+        }
+        if (horse.isPlaying && rb.linearVelocity == Vector2.zero)
+        {
+            horse.Pause();
+        }
+        else if (!horse.isPlaying && rb.linearVelocity != Vector2.zero)
+        {
+            horse.Play();
         }
     }
     void OnBecameInvisible()
@@ -75,7 +86,7 @@ public class PlayerMove : MonoBehaviour
 
     public void GetHit()
     {
-        DeathSFX.Play();
+        deathSFX.Play();
         if (score > 0)
         {
             for (int i = 0; i < score; i++)
