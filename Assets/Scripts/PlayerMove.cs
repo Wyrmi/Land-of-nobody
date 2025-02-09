@@ -9,7 +9,6 @@ public class PlayerMove : MonoBehaviour
     public int score;
     public TextMeshProUGUI scoreText;
     float dirX, dirY;
-    bool facingRight = false;
     Vector3 pos;
     void Start()
     {
@@ -29,15 +28,13 @@ public class PlayerMove : MonoBehaviour
         {
             Application.Quit();
         }
-        if (rb.linearVelocity.x > 0 && facingRight)
+        if (rb.linearVelocity.x > 0 && !sr.flipX)
         {
             sr.flipX = true;
-            facingRight = false;
         }
-        else if (rb.linearVelocity.x < 0 && !facingRight)
+        else if (rb.linearVelocity.x < 0 && sr.flipX)
         {
             sr.flipX = false;
-            facingRight= true;
         }
     }
     void OnBecameInvisible()

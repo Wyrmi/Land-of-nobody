@@ -1503,6 +1503,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5843212159894932345, guid: 490d490cbb46ee84ca336e6454510ac5, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843212159894932345, guid: 490d490cbb46ee84ca336e6454510ac5, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
