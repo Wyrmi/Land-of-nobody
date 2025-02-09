@@ -4,14 +4,17 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D rb;
+    SpriteRenderer sr;
     public float speed;
     public int score;
     public TextMeshProUGUI scoreText;
     float dirX, dirY;
+    bool facingRight = false;
     Vector3 pos;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         pos = Camera.main.WorldToViewportPoint(transform.position);
         score = 0;
     }
@@ -25,6 +28,16 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             Application.Quit();
+        }
+        if (rb.linearVelocity.x > 0 && facingRight)
+        {
+            sr.flipX = true;
+            facingRight = false;
+        }
+        else if (rb.linearVelocity.x < 0 && !facingRight)
+        {
+            sr.flipX = false;
+            facingRight= true;
         }
     }
     void OnBecameInvisible()
